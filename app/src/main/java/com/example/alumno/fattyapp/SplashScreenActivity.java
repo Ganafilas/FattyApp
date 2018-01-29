@@ -1,15 +1,13 @@
 package com.example.alumno.fattyapp;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
-
 
 public class SplashScreenActivity extends Activity {
 
@@ -25,7 +23,7 @@ public class SplashScreenActivity extends Activity {
         // Hide title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.activity_splash_screen);
 
         TimerTask task = new TimerTask() {
             @Override
