@@ -20,8 +20,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.alumno.fattyapp.MainActivity"
-            android:label="@string/title_activity_splash_screen"
+            android:name=".MainActivity"
+            android:label="MainActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alumno.fattyapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".explicacion_app1"
+            android:label="@string/title_activity_explicacion_app1"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
