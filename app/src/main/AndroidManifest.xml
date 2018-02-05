@@ -37,6 +37,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.alumno.fattyapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".explicacion_app2"
+            android:label="@string/title_activity_explicacion_app2"
+            android:parentActivityName=".explicacion_app1"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alumno.fattyapp.explicacion_app1" />
+        </activity>
     </application>
 
 </manifest>
