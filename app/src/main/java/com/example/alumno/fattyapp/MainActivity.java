@@ -18,23 +18,14 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*
-    private TextView tvKG;
-    private TextView tvAltura;
-    private TextView tvNombre;
-    */
-
     private String kg;
     private String altura;
     private String nombre;
 
+    private boolean soyMacho;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        */
 
         SharedPreferences settings=getSharedPreferences("prefs", Context.MODE_PRIVATE);
         boolean firstRun=settings.getBoolean("firstRun",true);
@@ -42,20 +33,11 @@ public class MainActivity extends AppCompatActivity {
         kg = settings.getString("kg","no hay nada");
         altura = settings.getString("altura","no hay nada");
         nombre = settings.getString("nombre","no hay nada");
-
-        /*
-        tvKG = (TextView)findViewById(R.id.tvKG);
-        tvAltura = (TextView)findViewById(R.id.tvAltura);
-        tvNombre = (TextView)findViewById(R.id.tvNombre);
-
-        tvKG.setText(kg);
-        tvAltura.setText(altura);
-        tvNombre.setText(nombre);
-        */
+        soyMacho = settings.getBoolean("soyMacho", soyMacho);
 
         SharedPreferences.Editor editor;
 
-        if(firstRun==true){//si se ejecuta por primera vez
+        if(firstRun == true){//Si se ejecuta por primera vez
             editor=settings.edit();
             editor.putBoolean("firstRun",false);
             editor.commit();
@@ -64,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             finish();
 
-        } else {
-
+        } else { //Sino, se guardarán los datos y se mostrarán en el menú principal
             Intent i = getIntent();
 
             if(i.getBooleanExtra("vengoDelRegistro",false)){
@@ -73,19 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("kg", i.getStringExtra("kg"));
                 editor.putString("altura", i.getStringExtra("altura"));
                 editor.putString("nombre", i.getStringExtra("nombre"));
+                editor.putBoolean("soyMacho", i.getBooleanExtra("sexo", soyMacho));
                 editor.commit();
 
                 kg = settings.getString("kg","no hay nada");
                 altura = settings.getString("altura","no hay nada");
                 nombre = settings.getString("nombre","no hay nada");
+                soyMacho = settings.getBoolean("soyMacho", soyMacho);
 
                 avanzarAMainActivity();
-
-                /*
-                tvKG.setText(i.getStringExtra("kg"));
-                tvAltura.setText( i.getStringExtra("altura"));
-                tvNombre.setText( i.getStringExtra("nombre"));
-                */
             } else {
                 avanzarAMainActivity();
             }
@@ -97,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("kg", kg);
         i.putExtra("altura", altura);
         i.putExtra("nombre", nombre);
+        i.putExtra("sexo", soyMacho);
         startActivity(i);
         finish();
     }
