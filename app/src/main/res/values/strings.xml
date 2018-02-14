@@ -4,4 +4,14 @@
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="title_activity_explicacion_app1">explicacion_app1</string>
     <string name="title_activity_explicacion_app2">explicacion_app2</string>
+    <string name="title_activity_datos_usuario1">datos_usuario1</string>
+    <string name="title_activity_datos_usuario2">datos_usuario2</string>
+    <string name="title_activity_menu__principal">Menu_Principal</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_lista__comidas">Lista_Comidas</string>
 </resources>

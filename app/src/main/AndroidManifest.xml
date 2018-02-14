@@ -46,6 +46,42 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.alumno.fattyapp.explicacion_app1" />
         </activity>
+        <activity
+            android:name=".datos_usuario1"
+            android:label="@string/title_activity_datos_usuario1"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alumno.fattyapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".datos_usuario2"
+            android:label="@string/title_activity_datos_usuario2"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alumno.fattyapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Menu_Principal"
+            android:label="@string/title_activity_menu__principal"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alumno.fattyapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ActividadesNavigationDrawer.Lista_Comidas"
+            android:label="@string/title_activity_lista__comidas"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alumno.fattyapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
